@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">Lesson1</string>
+    <string name="app_name">lesson1</string>
+    <string name="description">Какой Вы хотите пирожочек?</string>
+    <string name="cherryFilling">с вишней</string>
+    <string name="appleFilling">с яблоком</string>
+    <string name="currantFilling">со смородиной</string>
+    <string name="lemonFilling">с лимоном</string>
+    <string name="checkFry">жареный</string>
+    <string name="cutlery">положить приборы</string>
+    <string name="payCash">оплата наличными</string>
+    <string name="payCard">оплата картой</string>
+    <string name="enterPhone">укажите свой номер телефона</string>
+    <string name="order">заказать!</string>
+
+    <string name="text">text</string>
+    <string name="personName">person name</string>
+    <string name="phone">phone</string>
+    <string name="number">number</string>
+    <string name="textPassword">textPassword</string>
+    <string name="textEmailAddress">textEmailAddress</string>
+    <string name="date">date</string>
+    <string name="time">time</string>
+
 </resources>
