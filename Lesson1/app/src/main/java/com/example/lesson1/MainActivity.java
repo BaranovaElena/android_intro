@@ -26,43 +26,47 @@ public class MainActivity extends AppCompatActivity {
         ToggleButton togglePay = (ToggleButton) findViewById(R.id.togglePay);
 
         buttonOrder.setOnClickListener(v -> {
-            String result = "Ваш ";
+            StringBuilder result = new StringBuilder("Ваш ");
 
             if (checkBoxFry.isChecked()) {
-                result = result.concat(getString(R.string.checkFry));
-                result = result.concat(" ");
+                result.append(getString(R.string.checkFry)).append(" ");
             }
-            result = result.concat("пирожочек ");
+            result.append("пирожочек ");
 
             int checkedFilling = radioGroupFilling.getCheckedRadioButtonId();
             switch (checkedFilling) {
                 case R.id.radioFillingChery:
-                    result = result.concat(getString(R.string.cherryFilling));
+                    result.append(getString(R.string.cherryFilling));
                     break;
                 case R.id.radioFillingApple:
-                    result = result.concat(getString(R.string.appleFilling));
+                    result.append(getString(R.string.appleFilling));
                     break;
                 case R.id.radioFillingCurrant:
-                    result = result.concat(getString(R.string.currantFilling));
+                    result.append(getString(R.string.currantFilling));
                     break;
                 case R.id.radioFillingLemon:
-                    result = result.concat(getString(R.string.lemonFilling));
+                    result.append(getString(R.string.lemonFilling));
                     break;
                 default:
                     break;
             }
-            result = result.concat(" уже готовится!\n");
-            if (switchCutlery.isChecked())
-                result = result.concat("Мы положили Вам приборы\n");
-            else
-                result = result.concat("Мы не клали вам приборы\n");
+            result.append(" уже готовится!\n");
 
-            if (togglePay.isChecked())
-                result = result.concat("Оплатите заказ картой");
-            else
-                result = result.concat("Оплатите заказ наличными");
+            if (switchCutlery.isChecked()) {
+                result.append("Мы положили Вам приборы\n");
+            }
+            else {
+                result.append("Мы не клали вам приборы\n");
+            }
 
-            resultTextView.setText(result);
+            if (togglePay.isChecked()) {
+                result.append("Оплатите заказ картой");
+            }
+            else {
+                result.append("Оплатите заказ наличными");
+            }
+
+            resultTextView.setText(result.toString());
         });
     }
 }
